@@ -70,16 +70,18 @@ namespace OcrReader1
         {
             var ocrReader = new OcrReader();
 
-            string ocrNumber =
-                ocrReader.GetOcrDigit(1) +
-                ocrReader.GetOcrDigit(2) +
-                ocrReader.GetOcrDigit(3) +
-                ocrReader.GetOcrDigit(4) +
-                ocrReader.GetOcrDigit(5) +
-                ocrReader.GetOcrDigit(6) +
-                ocrReader.GetOcrDigit(7) +
-                ocrReader.GetOcrDigit(8) +
-                ocrReader.GetOcrDigit(9);
+            string[] ocrNumber = 
+            {
+                ocrReader.GetOcrDigit(1),
+                ocrReader.GetOcrDigit(2),
+                ocrReader.GetOcrDigit(3),
+                ocrReader.GetOcrDigit(4),
+                ocrReader.GetOcrDigit(5),
+                ocrReader.GetOcrDigit(6),
+                ocrReader.GetOcrDigit(7),
+                ocrReader.GetOcrDigit(8),
+                ocrReader.GetOcrDigit(9)
+            };
 
             Assert.AreEqual(123456789, ocrReader.ParseNumber(ocrNumber));
         }

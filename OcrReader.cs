@@ -68,9 +68,17 @@ namespace OcrReader1
             return -1;
         }
 
-        public int ParseNumber(string ocrdigit)
+        public int ParseNumber(string[] ocrdigits)
         {
-            return -1;
+            int number = 0;
+
+            foreach (string ocrdigit in ocrdigits)
+            {
+                number *= 10;
+                number += ParseDigit(ocrdigit);
+            }
+
+            return number;
         }
     }
 }
