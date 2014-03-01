@@ -64,5 +64,25 @@ namespace OcrReader1
                              + "  |";
             Assert.AreEqual(4, ocrReader.ParseDigit(ocrDigit4));
         }
+
+        [Test]
+        public void TestParseNumber()
+        {
+            var ocrReader = new OcrReader();
+
+            string ocrNumber =
+                ocrReader.GetOcrDigit(1) +
+                ocrReader.GetOcrDigit(2) +
+                ocrReader.GetOcrDigit(3) +
+                ocrReader.GetOcrDigit(4) +
+                ocrReader.GetOcrDigit(5) +
+                ocrReader.GetOcrDigit(6) +
+                ocrReader.GetOcrDigit(7) +
+                ocrReader.GetOcrDigit(8) +
+                ocrReader.GetOcrDigit(9);
+
+            Assert.AreEqual(123456789, ocrReader.ParseNumber(ocrNumber));
+        }
+
     }
 }
