@@ -13,7 +13,7 @@ namespace OcrReader1
         public void TestParseDigit()
         {
             var ocrReader = new OcrReader();
-            string ocrDigit7 = "___"
+            string ocrDigit7 = " _ "
                              + "  |"
                              + "  |";
 
