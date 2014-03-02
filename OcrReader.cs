@@ -80,5 +80,20 @@ namespace OcrReader1
 
             return number;
         }
+
+        public int ParseString(string ocrstring)
+        {
+            string[] ocrdigits = { "", "", "", "", "", "", "", "", "" };
+
+            for (int line = 0; line < 3; line++)
+            {
+                for (int index = 0; index < 9; index++)
+                {
+                    ocrdigits[index] += ocrstring.Substring(line * 27 + index * 3, 3);
+                }
+            }
+
+            return ParseNumber(ocrdigits);
+        }
     }
 }

@@ -86,5 +86,24 @@ namespace OcrReader1
             Assert.AreEqual(123456789, ocrReader.ParseNumber(ocrNumber));
         }
 
+        [Test]
+        public void TestParseString()
+        {
+            var ocrReader = new OcrReader();
+
+            string ocrString1 =
+                "    _  _  _  _  _  _  _  _ "
+              + "  |  || | _| _||_ |_ |_||_|"
+              + "  |  ||_| _||_  _||_||_| _|";
+
+            string ocrString2 =
+                "    _  _  _  _  _  _  _    "
+              + "|_|  || | _| _||_ |_ |_||_|"
+              + "  |  ||_| _||_  _||_||_|  |";
+
+            Assert.AreEqual(170325689, ocrReader.ParseString(ocrString1));
+            Assert.AreEqual(470325684, ocrReader.ParseString(ocrString2));
+        }
+
     }
 }
