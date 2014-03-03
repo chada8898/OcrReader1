@@ -45,7 +45,7 @@ namespace OcrReader1
                         {
                             buffer = reader.ReadLine();
                             int accountNumber = ocrReader.ParseString(ocrstring);
-                            Console.WriteLine(accountNumber);
+                            Console.WriteLine("Account number = " + accountNumber + "  Valid number = " + ocrReader.IsValidAccountNumber(accountNumber));
                         }
 
                     } while (buffer != null);
