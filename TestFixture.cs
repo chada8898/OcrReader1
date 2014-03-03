@@ -105,5 +105,14 @@ namespace OcrReader1
             Assert.AreEqual(470325684, ocrReader.ParseString(ocrString2));
         }
 
+        [Test]
+        public void TestIsValidAccountNumber()
+        {
+            var ocrReader = new OcrReader();
+
+            Assert.True(ocrReader.IsValidAccountNumber(457508000));
+            Assert.False(ocrReader.IsValidAccountNumber(664371495));
+        }
+
     }
 }

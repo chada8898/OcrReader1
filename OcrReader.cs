@@ -95,5 +95,11 @@ namespace OcrReader1
 
             return ParseNumber(ocrdigits);
         }
+
+        public bool IsValidAccountNumber(int accountNumber)
+        {
+            return false;
+        }
+
     }
 }
