@@ -14,3 +14,5 @@ At the end of part one, the only test needed is TestParseString().
 Leaving the redundant tests in since this is a practice exercise.
 
 
+Part 2: Calculate account number checksum to determine if account number is valid
+
